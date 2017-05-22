@@ -12,23 +12,21 @@ namespace UnitTestProject2
     public class ApiTestingFeatureSteps
     {
         private static FileBasedProject project;
-        private static ProjectFile[] sourceFiles;
         private static ProjectFile[] targetFiles;
         private static Guid[] ids;
         private static TargetLanguageStatistics[] targetStatistics;
         private static ConfirmationStatistics confirmationStatistics;
         private static ProjectStatistics projectStatistics;
+        private static ProjectPackageImport result;
 
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            ProjectPackageImport result;
+            result = new ProjectPackageImport();
             //project = FileBasedProject.CreateFromProjectPackage(@"C:\Users\Junior Mind\Documents\Studio 2017\Projects\Project 2.sdlppx", @"C:\Users\Junior Mind\Documents\Studio 2017\Projects\Project 2", out result);
-            project = FileBasedProject.CreateFromProjectPackage(@"C:\Jenkins\workspace\APITesting\Project 2.sdlppx", @"C:\Jenkins\workspace\Project 2", out result);
+            project = FileBasedProject.CreateFromProjectPackage(@"C:\Jenkins\workspace\APITesting\Project 2.sdlppx", @"C:\Jenkins\workspace\APITesting\Project 2", out result);
             var targetLanguage = new Language(CultureInfo.GetCultureInfo("fr-FR"));
-            sourceFiles = project.GetSourceLanguageFiles();
             targetFiles = project.GetTargetLanguageFiles(targetLanguage);
-            var sourceFile = sourceFiles[0];
             var targetFile = targetFiles[0];
             var statistics = targetFile.ConfirmationStatistics;
         }
