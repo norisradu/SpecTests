@@ -22,7 +22,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>D:\SDL\Ghost\bin\Mixed Platforms\Debug\</OutputPath>
+    <OutputPath>C:\Jenkins\workspace\APITesting\UnitTestProject2\UnitTestProject2\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
